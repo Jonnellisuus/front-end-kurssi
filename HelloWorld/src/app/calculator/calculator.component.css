@@ -1,0 +1,21 @@
+.container {
+  position: absolute;
+  width: 30%;
+  margin: auto;
+  top: 10%;
+  left: 25%;
+  background: gray;
+  padding: 5%;
+}
+
+.display {
+  position: absolute;
+  background: white;
+  left: 16%;
+  height: 15%;
+  width: 67.8%;
+  top: 4%;
+  font-size: 3rem;
+  text-align: right;
+  font-family: Courier, monospace;
+}

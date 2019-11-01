@@ -1,0 +1,10 @@
+<div class="container">
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let button of buttons">
+      <button mat-raised-button (click)="addValue(button)">{{button}}</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="display">{{ result }}</div>
+</div>
+
+<router-outlet></router-outlet>
