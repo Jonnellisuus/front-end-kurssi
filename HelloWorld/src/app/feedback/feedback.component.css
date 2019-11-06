@@ -1,0 +1,28 @@
+.questionBox {
+  position: absolute;
+  background: lightskyblue;
+  padding: 2%;
+  left: 33%;
+  top: 25%;
+  width: 30%;
+  height: 50%;
+  border-radius: 5%;
+}
+
+.sliderValue {
+  position: absolute;
+  left: 60%;
+  top: 60%;
+}
+
+.questionCard {
+  margin-bottom: 10px;
+  height: 20%;
+}
+
+.slider {
+  position: absolute;
+  top: 45%;
+  right: 47%;
+  width: 50%;
+}

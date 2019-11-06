@@ -4,15 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import {MatButtonModule, MatGridListModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatGridListModule, MatMenuModule, MatSliderModule, MatToolbarModule} from '@angular/material';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatGridListModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSliderModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
