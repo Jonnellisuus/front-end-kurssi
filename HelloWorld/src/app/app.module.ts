@@ -8,13 +8,15 @@ import {MatButtonModule, MatCardModule, MatGridListModule, MatMenuModule, MatSli
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     ToolbarComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

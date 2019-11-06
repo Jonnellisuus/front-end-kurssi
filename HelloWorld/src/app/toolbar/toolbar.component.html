@@ -1,7 +1,10 @@
-<mat-toolbar color="primary">
-<button mat-flat-button [matMenuTriggerFor]="menu">Menu</button>
-  <mat-menu #menu="matMenu">
-    <button routerLink="calculator" mat-menu-item>Calculator</button>
-    <button routerLink="feedback" mat-menu-item>Feedback</button>
-  </mat-menu>
-</mat-toolbar>
+<div class="toolbar">
+  <mat-toolbar color="primary">
+    <button mat-flat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button routerLink="calculator" mat-menu-item>Calculator</button>
+      <button routerLink="feedback" mat-menu-item>Feedback</button>
+      <button routerLink="form" mat-menu-item>Form</button>
+    </mat-menu>
+  </mat-toolbar>
+</div>
