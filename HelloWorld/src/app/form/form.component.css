@@ -1,0 +1,19 @@
+.form {
+  position: absolute;
+  background: beige;
+  width: 50%;
+  left: 30%;
+  top: 20%;
+  margin-bottom: 5%;
+}
+
+.submitButton {
+  background: lightskyblue;
+}
+
+#acceptBox {
+  position: absolute;
+  left: 35%;
+  top: 85.3%;
+  size: 20px;
+}
