@@ -119,18 +119,21 @@
                name="passWord"
                #passWord="ngModel"
                required minlength="10"
-               pattern="^(?=.*\d)(?=.*[a-ö])(?=.*[A-Ö])(?!.*\s).{6,12}$"
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$"
                placeholder="Password">
-        <!-- ^(?=.*\d)(?=.*[a-ö])(?=.*[A-Ö])(?!.*\s).{6,12}$ -->
+        <!--
+        ^(?=.*\d)(?=.*[a-ö])(?=.*[A-Ö])(?!.*\s).{6,12}$
+        ^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$
+        -->
         <mat-error *ngIf="passWord.invalid">
           Password is invalid.
         </mat-error>
       </mat-form-field>
     </div>
     <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)">
-      <p *ngIf="passWord.hasError('required')">Enter your Username</p>
+      <p *ngIf="passWord.hasError('required')">Enter your password</p>
       <p *ngIf="passWord.hasError('minlength')">Minimum 10 characters required</p>
-      <p *ngIf="passWord.hasError('pattern')">Password must contain a number and a capital letter</p>
+      <p *ngIf="passWord.hasError('pattern')">Password must contain a number, a capital letter and a lowercase letter</p>
     </div>
 
     <div>
