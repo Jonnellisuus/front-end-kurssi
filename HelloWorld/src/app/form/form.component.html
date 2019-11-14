@@ -122,7 +122,7 @@
                name="passWord"
                #passWord="ngModel"
                required minlength="10"
-               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                placeholder="Password">
       </mat-form-field>
     </div>
