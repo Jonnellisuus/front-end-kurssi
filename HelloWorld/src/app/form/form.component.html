@@ -11,16 +11,17 @@
                #firstName="ngModel"
                required minlength="2"
                pattern="[a-öA-Ö]*"
-               placeholder="Firstname">
-        <mat-error *ngIf="firstName.invalid">
-          First name is invalid.
-        </mat-error>
+               placeholder="First name">
       </mat-form-field>
     </div>
-    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-      <p *ngIf="firstName.hasError('required')">Enter your first name</p>
-      <p *ngIf="firstName.hasError('minlength')">Minimum 2 characters required</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+        <p class="instructionTextFirstName" *ngIf="firstName.hasError('required')">Enter your first name</p>
+        <p class="instructionTextFirstName" *ngIf="firstName.hasError('minlength')">Minimum 2 characters required</p>
+        <p class="instructionTextFirstName" *ngIf="firstName.hasError('pattern')">First name is invalid</p>
+      </div>
+    </mat-error>
 
     <div>
       <mat-form-field>
@@ -33,16 +34,17 @@
                #lastName="ngModel"
                required minlength="2"
                pattern="[a-öA-Ö]*"
-               placeholder="Lastname">
-        <mat-error *ngIf="lastName.invalid">
-          Last Name is invalid.
-        </mat-error>
+               placeholder="Last name">
       </mat-form-field>
     </div>
-    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-      <p *ngIf="lastName.hasError('required')">Enter your last name</p>
-      <p *ngIf="lastName.hasError('minlength')">Minimum 2 characters required</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        <p class="instructionTextLastName" *ngIf="lastName.hasError('required')">Enter your last name</p>
+        <p class="instructionTextLastName" *ngIf="lastName.hasError('minlength')">Minimum 2 characters required</p>
+        <p class="instructionTextLastName" *ngIf="lastName.hasError('pattern')">Last name is invalid</p>
+      </div>
+    </mat-error>
 
     <div>
       <mat-form-field>
@@ -56,15 +58,16 @@
                required minlength="11"
                pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$"
                placeholder="Person ID">
-        <mat-error *ngIf="personID.invalid">
-          Person ID is invalid.
-        </mat-error>
       </mat-form-field>
     </div>
-    <div *ngIf="personID.invalid && (personID.dirty || personID.touched)">
-      <p *ngIf="personID.hasError('required')">Enter your Person ID</p>
-      <p *ngIf="personID.hasError('minlength')">Minimum 11 characters required</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="personID.invalid && (personID.dirty || personID.touched)">
+        <p class="instructionTextPersonID1" *ngIf="personID.hasError('required')">Enter your Person ID</p>
+        <p class="instructionTextPersonID1" *ngIf="personID.hasError('minlength')">Minimum 11 characters required</p>
+        <p class="instructionTextPersonID2" *ngIf="personID.hasError('pattern')">Person Id is invalid</p>
+      </div>
+    </mat-error>
 
     <div>
       <mat-form-field>
@@ -78,15 +81,15 @@
                required minlength="1"
                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                placeholder="Email">
-        <mat-error *ngIf="eMail.invalid">
-          Email is invalid.
-        </mat-error>
       </mat-form-field>
     </div>
-    <div *ngIf="eMail.invalid && (eMail.dirty || eMail.touched)">
-      <p *ngIf="eMail.hasError('required')">Enter your Email</p>
-      <p *ngIf="eMail.hasError('minlength')">Email is invalid</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="eMail.invalid && (eMail.dirty || eMail.touched)">
+        <p class="instructionTextEmail" *ngIf="eMail.hasError('required')">Enter your Email</p>
+        <p class="instructionTextEmail" *ngIf="eMail.hasError('pattern')">Email is invalid</p>
+      </div>
+    </mat-error>
 
     <div>
       <mat-form-field>
@@ -99,15 +102,15 @@
                #userName="ngModel"
                required minlength="6"
                placeholder="Username">
-        <mat-error *ngIf="userName.invalid">
-          Username is invalid.
-        </mat-error>
       </mat-form-field>
     </div>
-    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
-      <p *ngIf="userName.hasError('required')">Enter your Username</p>
-      <p *ngIf="userName.hasError('minlength')">Minimum 6 characters required</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+        <p class="instructionTextUsername" *ngIf="userName.hasError('required')">Enter your username</p>
+        <p class="instructionTextUsername" *ngIf="userName.hasError('minlength')">Minimum 6 characters required</p>
+      </div>
+    </mat-error>
 
     <div>
       <mat-form-field>
@@ -121,20 +124,17 @@
                required minlength="10"
                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$"
                placeholder="Password">
-        <!--
-        ^(?=.*\d)(?=.*[a-ö])(?=.*[A-Ö])(?!.*\s).{6,12}$
-        ^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$
-        -->
-        <mat-error *ngIf="passWord.invalid">
-          Password is invalid.
-        </mat-error>
       </mat-form-field>
     </div>
-    <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)">
-      <p *ngIf="passWord.hasError('required')">Enter your password</p>
-      <p *ngIf="passWord.hasError('minlength')">Minimum 10 characters required</p>
-      <p *ngIf="passWord.hasError('pattern')">Password must contain a number, a capital letter and a lowercase letter</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)">
+        <p class="instructionTextPassword1" *ngIf="passWord.hasError('required')">Enter your password</p>
+        <p class="instructionTextPassword2" *ngIf="passWord.hasError('minlength')">Minimum 10 characters required</p>
+        <p class="instructionTextPassword3" *ngIf="passWord.hasError('pattern')">Password must contain a number, a
+          capital letter and a lowercase letter</p>
+      </div>
+    </mat-error>
 
     <div>
       <mat-form-field>
@@ -148,36 +148,41 @@
                required minlength="10"
                pattern="{{passWord.value}}"
                placeholder="Confirm password">
-        <mat-error *ngIf="confirmPassword.invalid">
-          Password is invalid.
-        </mat-error>
       </mat-form-field>
     </div>
-    <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
-      <p *ngIf="confirmPassword.hasError('required')">Repeat your password</p>
-      <p *ngIf="confirmPassword.hasError('pattern')">Passwords does not match</p>
-    </div>
+
+    <mat-error>
+      <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+        <p class="instructionTextConfirmPassword" *ngIf="confirmPassword.hasError('required')">Repeat your password</p>
+        <p class="instructionTextConfirmPassword" *ngIf="confirmPassword.hasError('pattern')">Passwords does not
+          match</p>
+      </div>
+    </mat-error>
 
     <div>
       <p>Accept terms and conditions</p>
       <label for="acceptBox"></label>
-      <input type="checkbox"
-             class="form-control"
-             id="acceptBox"
-             [(ngModel)]="person.acceptBox"
-             name="acceptBox"
-             #acceptBox="ngModel"
-             ngModel required>
-      <mat-error *ngIf="acceptBox.invalid">
+      <mat-checkbox
+        class="form-control"
+        id="acceptBox"
+        [(ngModel)]="person.acceptBox"
+        name="acceptBox"
+        #acceptBox="ngModel" required>
+      </mat-checkbox>
+
+      <mat-error>
+        <div *ngIf="acceptBox.invalid && (acceptBox.dirty || acceptBox.touched)">
+          <br>
+          <p class="acceptTerms" *ngIf="acceptBox.hasError('required')">Please accept terms and conditions to
+            proceed</p>
+        </div>
       </mat-error>
-    </div>
-    <div *ngIf="acceptBox.invalid && (acceptBox.dirty || acceptBox.touched)">
-      <p *ngIf="acceptBox.hasError('required')">Please accept terms and conditions to proceed</p>
     </div>
   </form>
 
   <div>
     <button mat-raised-button type="submit" class="submitButton" [disabled]="contactForm.form.invalid"
-            (click)="onSave()">Submit</button>
+            (click)="onSave()">Submit
+    </button>
   </div>
 </mat-card>
