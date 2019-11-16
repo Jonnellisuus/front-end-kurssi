@@ -8,7 +8,7 @@ import {
   MatButtonModule,
   MatCardModule, MatCheckboxModule,
   MatFormFieldModule,
-  MatGridListModule, MatInputModule,
+  MatGridListModule, MatIconModule, MatInputModule,
   MatMenuModule,
   MatSliderModule,
   MatToolbarModule
@@ -17,8 +17,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FormComponent } from './form/form.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ToolbarComponent,
     FeedbackComponent,
     FormComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
