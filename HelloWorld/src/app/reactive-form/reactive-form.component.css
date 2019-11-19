@@ -1,0 +1,86 @@
+.form {
+  position: absolute;
+  background: beige;
+  width: 50%;
+  height: 95%;
+  left: 30%;
+  top: 20%;
+  margin-bottom: 5%;
+}
+
+.submitButton {
+  position: absolute;
+  top: 90%;
+  background: lightskyblue;
+}
+
+#acceptBox {
+  position: absolute;
+  left: 35%;
+  top: 80%;
+}
+
+.acceptTerms {
+  position: absolute;
+  top: 83%;
+}
+
+.instructionTextFirstName {
+  position: absolute;
+  left: 32%;
+  top: 5%;
+}
+
+.instructionTextLastName {
+  position: absolute;
+  left: 32%;
+  top: 15%;
+}
+
+.instructionTextPersonID1 {
+  position: absolute;
+  left: 32%;
+  top: 22%;
+}
+
+.instructionTextPersonID2 {
+  position: absolute;
+  left: 32%;
+  top: 26%;
+}
+
+.instructionTextEmail {
+  position: absolute;
+  left: 32%;
+  top: 36%;
+}
+
+.instructionTextUsername {
+  position: absolute;
+  left: 32%;
+  top: 47%;
+}
+
+.instructionTextPassword1, .instructionTextPassword2 {
+  position: absolute;
+  left: 32%;
+  top: 52%;
+}
+
+.instructionTextPassword3 {
+  position: absolute;
+  left: 32%;
+  top: 55%;
+}
+
+.instructionTextConfirmPassword {
+  position: absolute;
+  left: 32%;
+  top: 67%;
+}
+
+.acceptTerms {
+  position: absolute;
+  top: 83.5%;
+  left: 8%;
+}

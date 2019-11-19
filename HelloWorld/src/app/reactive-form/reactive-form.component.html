@@ -1,0 +1,168 @@
+<mat-card class="form">
+  <form [formGroup]="profileForm" (ngSubmit)="onSave(contactForm)" #contactForm="ngForm">
+    <div>
+      <mat-form-field>
+        <label for="firstName"></label>
+        <input matInput type="text"
+               class="form-control"
+               id="firstName"
+               name="firstName"
+               formControlName="firstName"
+               placeholder="First name">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+        <p class="instructionTextFirstName" *ngIf="firstName.hasError('required')">Enter your first name</p>
+        <p class="instructionTextFirstName" *ngIf="firstName.hasError('minlength')">Minimum 2 characters required</p>
+        <p class="instructionTextFirstName" *ngIf="firstName.hasError('pattern')">First name is invalid</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <mat-form-field>
+        <label for="lastName"></label>
+        <input matInput type="text"
+               class="form-control"
+               id="lastName"
+               name="lastName"
+               formControlName="lastName"
+               placeholder="Last name">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        <p class="instructionTextLastName" *ngIf="lastName.hasError('required')">Enter your last name</p>
+        <p class="instructionTextLastName" *ngIf="lastName.hasError('minlength')">Minimum 2 characters required</p>
+        <p class="instructionTextLastName" *ngIf="lastName.hasError('pattern')">Last name is invalid</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <mat-form-field>
+        <label for="personID"></label>
+        <input matInput type="text"
+               class="form-control"
+               id="personID"
+               name="personID"
+               formControlName="personID"
+               placeholder="Person ID">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="personID.invalid && (personID.dirty || personID.touched)">
+        <p class="instructionTextPersonID1" *ngIf="personID.hasError('required')">Enter your person ID</p>
+        <p class="instructionTextPersonID1" *ngIf="personID.hasError('minlength')">Minimum 11 characters required</p>
+        <p class="instructionTextPersonID2" *ngIf="personID.hasError('pattern')">Person ID is invalid</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <mat-form-field>
+        <label for="email"></label>
+        <input matInput type="text"
+               class="form-control"
+               id="email"
+               name="email"
+               formControlName="email"
+               placeholder="Email">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <p class="instructionTextEmail" *ngIf="email.hasError('required')">Enter your email</p>
+        <p class="instructionTextEmail" *ngIf="email.hasError('pattern')">Email is invalid</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <mat-form-field>
+        <label for="userName"></label>
+        <input matInput type="text"
+               class="form-control"
+               id="userName"
+               name="userName"
+               formControlName="userName"
+               placeholder="Username">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+        <p class="instructionTextUsername" *ngIf="userName.hasError('required')">Enter your username</p>
+        <p class="instructionTextUsername" *ngIf="userName.hasError('minlength')">Minimum 6 characters required</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <mat-form-field>
+        <label for="passWord"></label>
+        <input matInput type="password"
+               class="form-control"
+               id="passWord"
+               name="passWord"
+               formControlName="passWord"
+               placeholder="Password">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)">
+        <p class="instructionTextPassword1" *ngIf="passWord.hasError('required')">Enter your password</p>
+        <p class="instructionTextPassword2" *ngIf="passWord.hasError('minlength')">Minimum 10 characters required</p>
+        <p class="instructionTextPassword3" *ngIf="passWord.hasError('pattern')">Password must contain a number, a
+          capital letter and a lowercase letter</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <mat-form-field>
+        <label for="confirmPassword"></label>
+        <input matInput type="password"
+               class="form-control"
+               id="confirmPassword"
+               name="confirmPassword"
+               formControlName="confirmPassword"
+               placeholder="Confirm password">
+      </mat-form-field>
+    </div>
+
+    <mat-error>
+      <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+        <p class="instructionTextConfirmPassword" *ngIf="confirmPassword.hasError('required')">Repeat your password</p>
+        <p class="instructionTextConfirmPassword" *ngIf="profileForm.controls.confirmPassword.errors?.MatchPassword">
+          Passwords do not match</p>
+      </div>
+    </mat-error>
+
+    <div>
+      <p>Accept terms and conditions</p>
+      <label for="termsAndCondition"></label>
+      <mat-checkbox
+        class="form-control"
+        id="termsAndCondition"
+        name="termsAndCondition"
+        formControlName="termsAndCondition"
+        required>
+      </mat-checkbox>
+
+      <mat-error>
+        <div *ngIf="termsAndCondition.invalid && (termsAndCondition.dirty || termsAndCondition.touched)">
+          <br>
+          <p class="acceptTerms" *ngIf="termsAndCondition.hasError('required')">Please accept terms and conditions to
+            proceed</p>
+        </div>
+      </mat-error>
+    </div>
+  </form>
+
+  <div>
+    <button mat-raised-button type="submit" class="submitButton" [disabled]="contactForm.form.invalid"
+            (click)="onSave()">Submit
+    </button>
+  </div>
+</mat-card>
