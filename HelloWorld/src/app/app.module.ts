@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import {
   MatButtonModule,
-  MatCardModule, MatCheckboxModule,
+  MatCardModule, MatCheckboxModule, MatExpansionModule,
   MatFormFieldModule,
   MatGridListModule, MatIconModule, MatInputModule,
   MatMenuModule,
@@ -20,6 +20,8 @@ import { FormComponent } from './form/form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { CinemaComponent } from './cinema/cinema.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     FeedbackComponent,
     FormComponent,
     PageNotFoundComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    CinemaComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     MatInputModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
