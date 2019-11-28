@@ -122,8 +122,9 @@
                name="passWord"
                #passWord="ngModel"
                required minlength="10"
-               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$"
                placeholder="Password">
+        <!-- (?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,} -->
       </mat-form-field>
     </div>
 
@@ -154,7 +155,7 @@
     <mat-error>
       <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
         <p class="instructionTextConfirmPassword" *ngIf="confirmPassword.hasError('required')">Repeat your password</p>
-        <p class="instructionTextConfirmPassword" *ngIf="confirmPassword.hasError('pattern')">Passwords does not
+        <p class="instructionTextConfirmPassword" *ngIf="confirmPassword.hasError('pattern')">Passwords do not
           match</p>
       </div>
     </mat-error>
