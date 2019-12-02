@@ -1,6 +1,11 @@
 <mat-accordion>
   <h1 class="title">Finnkino uutisia</h1>
-  <mat-expansion-panel class="movieNews" *ngFor="let item of getNews$ | async">
+  <mat-form-field>
+    <label>
+      <input matInput [(ngModel)]="searchText" placeholder="Hae uutisia">
+    </label>
+  </mat-form-field>
+  <mat-expansion-panel class="movieNews" *ngFor="let item of getNews$ | async | cinema : searchText">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{item.PublishDate}}

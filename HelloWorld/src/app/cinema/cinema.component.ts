@@ -10,6 +10,7 @@ import {MovieService} from '../services/movie.service';
 })
 export class CinemaComponent implements OnInit {
   private getNews$: Observable<News[]>;
+  searchText: string;
 
   constructor(private movieService: MovieService) {
   }

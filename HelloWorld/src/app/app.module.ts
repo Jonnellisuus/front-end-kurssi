@@ -8,7 +8,7 @@ import {
   MatButtonModule,
   MatCardModule, MatCheckboxModule, MatExpansionModule,
   MatFormFieldModule,
-  MatGridListModule, MatIconModule, MatInputModule,
+  MatGridListModule, MatIconModule, MatInputModule, MatListModule,
   MatMenuModule,
   MatSliderModule,
   MatToolbarModule
@@ -22,6 +22,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CinemaPipe } from './pipes/cinema.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
     FormComponent,
     PageNotFoundComponent,
     ReactiveFormComponent,
-    CinemaComponent
+    CinemaComponent,
+    CinemaPipe
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     MatIconModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
