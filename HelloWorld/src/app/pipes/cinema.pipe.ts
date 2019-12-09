@@ -7,17 +7,9 @@ export class CinemaPipe implements PipeTransform {
 
   transform(value: any, filter: any): any {
 
-    if (!value) {
-      return null;
-    }
-    if (!filter) {
+    if (!value || !filter) {
       return value;
     }
-
-    filter = filter.toLowerCase();
-
-    return value.filter(function(item) {
-      return JSON.stringify(item).toLowerCase().includes(filter);
-    });
+    return value.filter(item => (JSON.stringify(item).toLowerCase().includes(filter)));
   }
 }
