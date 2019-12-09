@@ -23,6 +23,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CinemaPipe } from './pipes/cinema.pipe';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CinemaPipe } from './pipes/cinema.pipe';
     PageNotFoundComponent,
     ReactiveFormComponent,
     CinemaComponent,
-    CinemaPipe
+    CinemaPipe,
+    CurrencyConverterComponent
   ],
   imports: [
     BrowserModule,
