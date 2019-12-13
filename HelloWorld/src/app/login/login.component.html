@@ -1,14 +1,19 @@
-<h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
-
-<div *ngIf="!(authService.user | async)">
-  <input type="text" [(ngModel)]="email" placeholder="email">
-  <input type="password" [(ngModel)]="password" placeholder="password">
-
-  <button (click)="login()" [disabled]="!password || !password">Login</button>
-
-  <button (click)="cancelLogin()">Cancel</button>
-</div>
-
-<button (click)="logout()" *ngIf="authService.user | async">
-  Logout
-</button>
+<mat-card class="login">
+  <h3 class="loginTitle">Login to admin page.</h3>
+  <div *ngIf="!(authService.user | async)">
+    <mat-form-field>
+      <label>
+        <input matInput type="text" [(ngModel)]="email" placeholder="email">
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <label>
+        <input matInput type="password" [(ngModel)]="password" placeholder="password">
+      </label>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button class="loginButton" (click)="login()" [disabled]="!email || !password">Login</button>
+    <button mat-raised-button class="cancelButton" (click)="cancelLogin()">Cancel</button>
+  </div>
+</mat-card>

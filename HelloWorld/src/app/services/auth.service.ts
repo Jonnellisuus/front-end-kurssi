@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
@@ -11,7 +10,7 @@ import {Observable} from 'rxjs';
 export class AuthService {
   user: Observable<firebase.User>;
 
-  constructor(private firebaseAuth: AngularFireAuth) {
+  constructor(private firebaseAuth: AngularFireAuth, public router: Router) {
     this.user = firebaseAuth.authState;
   }
 
@@ -21,9 +20,11 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Access granted.');
+        this.router.navigate(['admin']);
       })
       .catch(err => {
         console.log('Invalid email or password', err.message);
+        this.router.navigate(['login']);
       });
   }
 

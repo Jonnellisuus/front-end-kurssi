@@ -1,0 +1,21 @@
+.login {
+  position: absolute;
+  top: 20%;
+  width: 15%;
+  left: 40%;
+  background: beige;
+}
+
+.loginTitle {
+  text-align: center;
+}
+
+.loginButton {
+  background: mediumseagreen;
+}
+
+.cancelButton {
+  position: relative;
+  left: 20%;
+  background: mediumseagreen;
+}

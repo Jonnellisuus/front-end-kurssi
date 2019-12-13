@@ -21,9 +21,11 @@ export class LoginComponent implements OnInit {
     this.email = this.password = '';
   }
 
+  /*
   logout() {
     this.authService.logout();
   }
+   */
 
   cancelLogin() {
     this.router.navigate(['calculator']);

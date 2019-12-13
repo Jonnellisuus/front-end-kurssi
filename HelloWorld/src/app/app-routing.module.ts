@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'cinema', component: CinemaComponent},
   {path: 'currencyconverter', component: CurrencyConverterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminComponent}, /* canActive: [AuthGuard], data: [target: ['main']] */
+  {path: 'admin', component: AdminComponent}, /* canActivate: [AuthGuard], data: [target: ['main']] */
   {path: '**', component: PageNotFoundComponent}
 ];
 
