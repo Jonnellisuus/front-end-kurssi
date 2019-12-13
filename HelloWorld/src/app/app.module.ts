@@ -9,7 +9,7 @@ import {
   MatCardModule, MatCheckboxModule, MatExpansionModule,
   MatFormFieldModule,
   MatGridListModule, MatIconModule, MatInputModule, MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatSelectModule,
   MatSliderModule,
   MatToolbarModule
 } from '@angular/material';
@@ -24,6 +24,13 @@ import { CinemaComponent } from './cinema/cinema.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CinemaPipe } from './pipes/cinema.pipe';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
+import { AdminComponent } from './admin/admin.component';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AuthService} from './services/auth.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,9 @@ import { CurrencyConverterComponent } from './currency-converter/currency-conver
     ReactiveFormComponent,
     CinemaComponent,
     CinemaPipe,
-    CurrencyConverterComponent
+    CurrencyConverterComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -57,8 +66,12 @@ import { CurrencyConverterComponent } from './currency-converter/currency-conver
     MatExpansionModule,
     HttpClientModule,
     MatListModule,
+    MatSelectModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

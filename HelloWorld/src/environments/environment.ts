@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBziwh2MrqXcyfDRSMxTlferelIwcOGUY4',
+    authDomain: 'loginauthentication-a29a5.firebaseapp.com',
+    databaseURL: 'https://loginauthentication-a29a5.firebaseio.com',
+    projectId: 'loginauthentication-a29a5',
+    storageBucket: 'loginauthentication-a29a5.appspot.com',
+    messagingSenderId: '941619918838',
+    appId: '1:941619918838:web:c6fa341060437daf6939d7',
+    measurementId: 'G-VJC8X4LKWX'
+  }
 };
 
 /*
