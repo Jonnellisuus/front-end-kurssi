@@ -23,7 +23,6 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CinemaPipe } from './pipes/cinema.pipe';
-import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AdminComponent } from './admin/admin.component';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
@@ -31,6 +30,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthService} from './services/auth.service';
 import { LoginComponent } from './login/login.component';
+import {CurrencyConverterComponent} from './currency-converter/currency-converter.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +43,9 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormComponent,
     CinemaComponent,
     CinemaPipe,
-    CurrencyConverterComponent,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    CurrencyConverterComponent
   ],
   imports: [
     BrowserModule,

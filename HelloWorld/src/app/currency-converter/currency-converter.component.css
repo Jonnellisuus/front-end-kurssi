@@ -1,0 +1,17 @@
+.firstCurrency {
+  position: relative;
+  left: 10%;
+}
+
+.secondCurrency {
+  position: relative;
+  left: 20%;
+}
+
+.calculateButton {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  color: white;
+  background: blue;
+}
