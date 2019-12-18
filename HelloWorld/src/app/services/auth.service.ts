@@ -9,9 +9,20 @@ import {Observable} from 'rxjs';
 })
 export class AuthService {
   user: Observable<firebase.User>;
+  userData: any;
 
   constructor(private firebaseAuth: AngularFireAuth, public router: Router) {
     this.user = firebaseAuth.authState;
+    this.firebaseAuth.authState.subscribe(user => {
+      if (user) {
+        this.userData = user;
+        localStorage.setItem('user', JSON.stringify(this.userData));
+        JSON.parse(localStorage.getItem('user'));
+      } else {
+        localStorage.setItem('user', null);
+        JSON.parse(localStorage.getItem('user'));
+      }
+    });
   }
 
   login(email: string, password: string) {
@@ -32,5 +43,11 @@ export class AuthService {
     this.firebaseAuth
       .auth
       .signOut();
+  }
+
+  /* Checks if the user is logged in. */
+    get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null);
   }
 }

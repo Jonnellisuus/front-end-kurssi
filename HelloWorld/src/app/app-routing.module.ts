@@ -9,7 +9,7 @@ import {CinemaComponent} from './cinema/cinema.component';
 import {CurrencyConverterComponent} from './currency-converter/currency-converter.component';
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
-
+import {GuardGuard} from './guard/guard.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/form', pathMatch: 'full'},
@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'cinema', component: CinemaComponent},
   {path: 'currencyconverter', component: CurrencyConverterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminComponent}, /* canActivate: [AuthGuard], data: [target: ['main']] */
+  {path: 'admin', component: AdminComponent, canActivate: [GuardGuard]},
   {path: '**', component: PageNotFoundComponent}
 ];
 
