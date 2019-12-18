@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ import {Observable} from 'rxjs';
 export class AuthService {
   user: Observable<firebase.User>;
   userData: any;
+
+  userEmail: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private firebaseAuth: AngularFireAuth, public router: Router) {
     this.user = firebaseAuth.authState;
@@ -46,8 +48,14 @@ export class AuthService {
   }
 
   /* Checks if the user is logged in. */
+  getLoggedInUser(): any {
+    return this.firebaseAuth.authState;
+  }
+
+  /* Another way to check if the user is logged in.
     get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null);
   }
+  */
 }
