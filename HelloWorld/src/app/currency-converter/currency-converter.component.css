@@ -1,17 +1,40 @@
+.currencyConverter {
+  position: absolute;
+  height: 40%;
+  width: 70%;
+  top: 35%;
+  left: 15%;
+  background: antiquewhite;
+}
+
 .firstCurrency {
   position: relative;
   left: 10%;
+  top: 10%;
 }
 
 .secondCurrency {
   position: relative;
   left: 20%;
+  top: 10%;
 }
 
 .calculateButton {
   position: absolute;
-  top: 50%;
-  right: 20%;
+  top: 18%;
+  right: 3%;
   color: white;
   background: blue;
+}
+
+.convertedCurrency {
+  position: absolute;
+  top: 35%;
+  left: 30.75%;
+  width: 48.5%;
+}
+
+.currencyAmount {
+  position: relative;
+  top: 2.5%;
 }

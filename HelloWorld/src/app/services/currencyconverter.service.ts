@@ -4,13 +4,14 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Currencies} from '../currency-converter/currencies';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class CurrencyconverterService {
   currenciesArray: Array<Currencies>;
   url = 'https://api.exchangeratesapi.io/latest';
+  baseCurrency = 'https://api.exchangeratesapi.io/latest?base=';
+  currencySymbols = '&symbols=';
 
   constructor(private httpClient: HttpClient) {
     this.currenciesArray = new Array<Currencies>();
@@ -18,16 +19,13 @@ export class CurrencyconverterService {
 
   getData(): Observable<any> {
     return this.httpClient.get(this.url).pipe(map(response => {
-      // console.log(Object.keys(response.rates));
-      // console.log(Object.values(response.rates));
-      // @ts-ignore
-      const objectArray = Object.entries(response.rates);
-      objectArray.forEach(([key, value]) => {
-        this.currenciesArray.push(new Currencies(key, Number(value)));
-        console.log(key, value);
-        // console.log(value);
-      });
-      return this.currenciesArray;
+      return response as Currencies;
+    }));
+  }
+
+  getResult(baseCurrency, currencySymbols): Observable<any> {
+    return this.httpClient.get(this.baseCurrency + baseCurrency + this.currencySymbols + currencySymbols).pipe(map(response => {
+      return response;
     }));
   }
 }

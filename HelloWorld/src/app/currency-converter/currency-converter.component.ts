@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {CurrencyconverterService} from '../services/currencyconverter.service';
-import {Observable} from 'rxjs';
-import {Currencies} from './currencies';
 
 @Component({
   selector: 'app-currency-converter',
@@ -9,20 +7,28 @@ import {Currencies} from './currencies';
   styleUrls: ['./currency-converter.component.css']
 })
 export class CurrencyConverterComponent implements OnInit {
-  private getCurrency$: Observable<Currencies[]>;
+  getCurrency: string[];
+  userInput: number;
+  currencyFrom: string;
+  currencyTo: string;
+  currencyRate: number;
+  convertedCurrency: number;
 
   constructor(private currencyConverter: CurrencyconverterService) { }
 
   ngOnInit() {
     this.currencyConverter.getData().subscribe(result => {
-      this.getCurrency$ = this.currencyConverter.getData();
+      this.getCurrency = Object.keys(result.rates);
+      this.getCurrency.unshift('EUR');
       console.log(result);
     });
   }
 
   calculateResult() {
-    // document.getElementById('convertedCurrency').innerHTML = document.getElementById('amount').value;
+    this.currencyConverter.getResult(this.currencyFrom, this.currencyTo).subscribe(result => {
+      this.currencyRate = Number(Object.values(result.rates));
+      this.convertedCurrency = this.userInput * this.currencyRate;
+      console.log(this.convertedCurrency);
+    });
   }
 }
-
-
