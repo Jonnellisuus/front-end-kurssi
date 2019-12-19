@@ -1,8 +1,18 @@
+.title {
+  text-align: center;
+}
+
+.text {
+  position: absolute;
+  left: 38%;
+  top: 20%;
+}
+
 .currencyConverter {
   position: absolute;
   height: 40%;
   width: 70%;
-  top: 35%;
+  top: 47%;
   left: 15%;
   background: antiquewhite;
 }
@@ -37,4 +47,78 @@
 .currencyAmount {
   position: relative;
   top: 2.5%;
+}
+
+@media screen and (max-width: 360px) {
+  .currencyConverter {
+    height: 60%;
+    top: 50%;
+    left: 10.5%;
+    margin-bottom: 2%;
+  }
+
+  .currencyAmount {
+    top: 1%;
+  }
+
+  .firstCurrency {
+    top: 5%;
+    left: 1%;
+  }
+
+  .secondCurrency {
+    left: 1%;
+    top: 10%;
+  }
+
+  .convertedCurrency {
+    left: 7%;
+    top: 60%;
+  }
+
+  .calculateButton {
+    top: 80%;
+    left: 7%;
+  }
+
+  .text {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 812px) {
+  .currencyConverter {
+    height: 60%;
+    top: 50%;
+    left: 10.5%;
+    margin-bottom: 2%;
+  }
+
+  .currencyAmount {
+    top: 1%;
+  }
+
+  .firstCurrency {
+    top: 5%;
+    left: 1%;
+  }
+
+  .secondCurrency {
+    left: 1%;
+    top: 10%;
+  }
+
+  .convertedCurrency {
+    left: 7%;
+    top: 60%;
+  }
+
+  .calculateButton {
+    top: 80%;
+    left: 7%;
+  }
+
+  .text {
+    left: 10%;
+  }
 }
