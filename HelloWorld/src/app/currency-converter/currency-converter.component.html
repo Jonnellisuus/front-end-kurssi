@@ -1,17 +1,19 @@
 <mat-card>
   <mat-form-field>
     <label>
-      <p>Amount</p>
+      <mat-label>Amount</mat-label>
       <input matInput type="number" id="amount">
     </label>
   </mat-form-field>
   <mat-form-field class="firstCurrency">
-    <p>From</p>
+    <mat-label>From</mat-label>
     <mat-select></mat-select>
   </mat-form-field>
   <mat-form-field class="secondCurrency">
-    <p>To</p>
-    <mat-select></mat-select>
+    <mat-label>To</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let currency of getCurrency$ | async" value="{{currency.currencyKey}}">{{currency.currencyKey}}</mat-option>
+    </mat-select>
   </mat-form-field>
   <button class="calculateButton" mat-raised-button (click)="calculateResult()">Calculate</button>
   <h3 id="convertedCurrency"></h3>
