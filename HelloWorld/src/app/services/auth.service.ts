@@ -36,6 +36,7 @@ export class AuthService {
       })
       .catch(err => {
         console.log('Invalid email or password', err.message);
+        alert('Invalid email or password.');
         this.router.navigate(['login']);
       });
   }
