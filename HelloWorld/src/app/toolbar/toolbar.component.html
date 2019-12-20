@@ -12,6 +12,11 @@
     </mat-menu>
     <div class="userEmail">
       <p *ngIf="authService.isLoggedIn()">{{(authService.user | async)?.email}}</p>
+      <p *ngIf="!authService.isLoggedIn()"></p>
+    </div>
+    <div class="button">
+      <button mat-raised-button routerLink="login" *ngIf="authService.isLoggedIn()">Login</button>
+      <button mat-raised-button routerLink="login" *ngIf="!authService.isLoggedIn()">Logout</button>
     </div>
   </mat-toolbar>
 </div>

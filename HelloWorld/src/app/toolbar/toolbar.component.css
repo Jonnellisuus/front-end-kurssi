@@ -4,5 +4,11 @@ mat-icon {
 
 .userEmail {
   position: absolute;
+  right: 8%;
+}
+
+.button {
+  position: absolute;
   right: 1%;
+  top: 2%;
 }
