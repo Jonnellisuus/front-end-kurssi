@@ -10,5 +10,8 @@
       <button routerLink="currencyconverter" mat-menu-item>Currency converter</button>
       <button routerLink="login" mat-menu-item>Login</button>
     </mat-menu>
+    <div class="userEmail">
+      <p *ngIf="authService.isLoggedIn()">{{(authService.user | async)?.email}}</p>
+    </div>
   </mat-toolbar>
 </div>

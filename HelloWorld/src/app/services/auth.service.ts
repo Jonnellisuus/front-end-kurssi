@@ -10,7 +10,6 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class AuthService {
   user: Observable<firebase.User>;
   userData: any;
-
   userEmail: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private firebaseAuth: AngularFireAuth, public router: Router) {
@@ -58,4 +57,12 @@ export class AuthService {
     return (user !== null);
   }
   */
+
+  isLoggedIn() {
+    if (this.userEmail == null) {
+      return false;
+    } else {
+      return this.userEmail;
+    }
+  }
 }
