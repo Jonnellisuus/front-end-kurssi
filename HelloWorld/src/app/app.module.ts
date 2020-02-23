@@ -31,6 +31,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthService} from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import {CurrencyConverterComponent} from './currency-converter/currency-converter.component';
+import { ForexComponent } from './forex/forex.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {CurrencyConverterComponent} from './currency-converter/currency-converte
     CinemaPipe,
     AdminComponent,
     LoginComponent,
-    CurrencyConverterComponent
+    CurrencyConverterComponent,
+    ForexComponent
   ],
   imports: [
     BrowserModule,

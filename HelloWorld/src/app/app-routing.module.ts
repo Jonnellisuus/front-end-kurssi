@@ -10,6 +10,7 @@ import {CurrencyConverterComponent} from './currency-converter/currency-converte
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
 import {GuardGuard} from './guard/guard.guard';
+import {ForexComponent} from './forex/forex.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/form', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'reactiveform', component: ReactiveFormComponent},
   {path: 'cinema', component: CinemaComponent},
   {path: 'currencyconverter', component: CurrencyConverterComponent},
+  {path: 'forex', component: ForexComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent, canActivate: [GuardGuard]},
   {path: '**', component: PageNotFoundComponent}
