@@ -6,47 +6,40 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-
-  buttons: string[] = ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', 'C', '0', '+', '='];
-  result: string = '';
-  private prevValue: string = '';
-  private nextValue: string = '';
+  buttons: string[];
+  operation: string;
+  result: string;
 
   constructor() {
+    this.buttons = ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', 'C', '0', '+', '='];
+    this.operation = '';
   }
 
   ngOnInit() {
   }
 
-  addValue(value: string) {
-    if (this.result !== '') {
-      this.prevValue = this.nextValue;
-      this.nextValue = value;
-    }
-
-    if (value === 'C') {
-      this.result = '';
-
-    } else if (value === '=') {
-      // tslint:disable-next-line:no-eval
-      this.result = eval(this.result);
-
-    } else {
-      this.result += value;
-      this.prevValue = this.result[this.result.length - 1];
-      this.nextValue = this.result[this.result.length - 2];
-
-      if (this.prevValue === '/' && this.nextValue === '/' || this.prevValue === '/' && this.nextValue === '*' ||
-        this.prevValue === '/' && this.nextValue === '+' || this.prevValue === '/' && this.nextValue === '-' ||
-        this.prevValue === '*' && this.nextValue === '/' || this.prevValue === '*' && this.nextValue === '*' ||
-        this.prevValue === '*' && this.nextValue === '+' || this.prevValue === '*' && this.nextValue === '-' ||
-        this.prevValue === '+' && this.nextValue === '/' || this.prevValue === '+' && this.nextValue === '*' ||
-        this.prevValue === '+' && this.nextValue === '+' || this.prevValue === '+' && this.nextValue === '-' ||
-        this.prevValue === '-' && this.nextValue === '/' || this.prevValue === '-' && this.nextValue === '*' ||
-        this.prevValue === '-' && this.nextValue === '+' || this.prevValue === '-' && this.nextValue === '-') {
-
-        this.result = this.result.substring(0, this.result.length - 1);
+  addValue(value) {
+    if (value === '=') {
+      try {
+        // tslint:disable-next-line:no-eval
+        this.result = eval(this.operation);
+        this.operation = this.result.toString();
+      } catch (error) {
+        console.error(error);
+        this.operation = '';
       }
+    } else if (value === 'C') {
+      this.operation = '';
+    } else if (value === '+' || value === '-' || value === '*' || value === '/') {
+      const lastChar = this.operation.substr(this.operation.length - 1);
+      if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '/') {
+        (console.log('do nothing'));
+      } else {
+        this.operation += value;
+      }
+    } else {
+      this.operation += value;
     }
   }
+
 }

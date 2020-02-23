@@ -10,12 +10,6 @@
 
 .display {
   position: absolute;
-  background: white;
-  left: 16%;
-  height: 15%;
-  width: 67.8%;
-  top: 4%;
-  font-size: 3rem;
-  text-align: right;
-  font-family: Courier, monospace;
+  left: 34%;
+  top: 8%;
 }
