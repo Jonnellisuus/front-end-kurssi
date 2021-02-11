@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth.service';
+// import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,7 +8,7 @@ import {AuthService} from '../services/auth.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(/* public authService: AuthService */) { }
 
   ngOnInit() {
   }

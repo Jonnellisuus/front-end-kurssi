@@ -7,9 +7,9 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ReactiveFormComponent} from './reactive-form/reactive-form.component';
 import {CinemaComponent} from './cinema/cinema.component';
 import {CurrencyConverterComponent} from './currency-converter/currency-converter.component';
-import {LoginComponent} from './login/login.component';
-import {AdminComponent} from './admin/admin.component';
-import {GuardGuard} from './guard/guard.guard';
+// import {LoginComponent} from './login/login.component';
+// import {AdminComponent} from './admin/admin.component';
+// import {GuardGuard} from './guard/guard.guard';
 import {ForexComponent} from './forex/forex.component';
 
 const routes: Routes = [
@@ -21,8 +21,8 @@ const routes: Routes = [
   {path: 'cinema', component: CinemaComponent},
   {path: 'currencyconverter', component: CurrencyConverterComponent},
   {path: 'forex', component: ForexComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminComponent, canActivate: [GuardGuard]},
+  // {path: 'login', component: LoginComponent},
+  // {path: 'admin', component: AdminComponent, canActivate: [GuardGuard]},
   {path: '**', component: PageNotFoundComponent}
 ];
 

@@ -23,13 +23,13 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CinemaPipe } from './pipes/cinema.pipe';
-import { AdminComponent } from './admin/admin.component';
-import {environment} from '../environments/environment';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AuthService} from './services/auth.service';
-import { LoginComponent } from './login/login.component';
+// import { AdminComponent } from './admin/admin.component';
+// import {environment} from '../environments/environment';
+// import {AngularFireModule} from '@angular/fire';
+// import {AngularFirestoreModule} from '@angular/fire/firestore';
+// import {AngularFireAuthModule} from '@angular/fire/auth';
+// import {AuthService} from './services/auth.service';
+// import { LoginComponent } from './login/login.component';
 import {CurrencyConverterComponent} from './currency-converter/currency-converter.component';
 import { ForexComponent } from './forex/forex.component';
 
@@ -44,8 +44,8 @@ import { ForexComponent } from './forex/forex.component';
     ReactiveFormComponent,
     CinemaComponent,
     CinemaPipe,
-    AdminComponent,
-    LoginComponent,
+    // AdminComponent,
+    // LoginComponent,
     CurrencyConverterComponent,
     ForexComponent
   ],
@@ -69,11 +69,12 @@ import { ForexComponent } from './forex/forex.component';
     HttpClientModule,
     MatListModule,
     MatSelectModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
-    AngularFireAuthModule,
-    AngularFirestoreModule
+    // AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    // AngularFireAuthModule,
+    // AngularFirestoreModule
   ],
-  providers: [AuthService],
+  // providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

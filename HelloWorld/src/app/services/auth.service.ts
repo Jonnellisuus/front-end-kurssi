@@ -1,3 +1,4 @@
+/*
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
@@ -47,17 +48,17 @@ export class AuthService {
       .signOut();
   }
 
-  /* Checks if the user is logged in. */
+   Checks if the user is logged in.
   getLoggedInUser(): any {
     return this.firebaseAuth.authState;
   }
 
-  /* Another way to check if the user is logged in.
+   Another way to check if the user is logged in.
     get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null);
   }
-  */
+
 
   isLoggedIn() {
     if (this.userEmail == null) {
@@ -67,3 +68,4 @@ export class AuthService {
     }
   }
 }
+*/

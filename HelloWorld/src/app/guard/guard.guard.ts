@@ -1,3 +1,4 @@
+/*
 import {Injectable} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router} from '@angular/router';
 import {Observable} from 'rxjs';
@@ -24,9 +25,9 @@ export class GuardGuard implements CanActivate {
     }
     return true;
   }
-   */
 
-  /* Checks if the user is logged in. */
+
+   Checks if the user is logged in.
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
 
     return this.authService.getLoggedInUser().pipe(
@@ -36,3 +37,4 @@ export class GuardGuard implements CanActivate {
     );
   }
 }
+*/
